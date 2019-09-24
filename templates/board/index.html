@@ -11,6 +11,7 @@
                 <th class="today">BitBucket</th>
                   <th class="date">Tests</th>
                   <th class="date">Trivy</th>
+                  <th class="date">Docs</th>
 
             </thead>
 
@@ -18,7 +19,7 @@
               {% for service in services %}
                 <tr>
                   <td>
-                      
+                    <a href="{{ service.get_absolute_url }}">{{ service.name }}</a>
                         {% for e in service.events.all %}
                         {% if "bitbucket" in e.message %}
                         <a href="{{ e.message }}">{{ service.name }}</a>
@@ -41,7 +42,10 @@
                     <img src="{{ STATIC_URL }}images/status/coverage.png" alt="{{ status.image }}">
                   </td>
                   <td class="status">
-                    <img src="{{ STATIC_URL }}images/status/vunerabilities.png" alt="{{ status.image }}">
+                    <img src="{{ STATIC_URL }}images/status/vulnerabilities.png" alt="{{ status.image }}">
+                  </td>
+                  <td class="status">
+                    <img src="{{ STATIC_URL }}images/status/docs.png" alt="{{ status.image }}">
                   </td>
                       
                 </tr>
