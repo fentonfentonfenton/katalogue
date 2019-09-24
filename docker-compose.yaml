@@ -1,18 +1,20 @@
 version: "3.7"
 services:
   whiskerboard:
-    image: agaveapi/whiskerboard
+    image: rickpeters/whiskerboard
     ports:
       - "8000:8000"
       - "8080:8080"
     links:
       - postgres
       - redis
+    command: /usr/local/bin/supervisord -c /usr/src/python/whiskerboard/config/supervisor.conf
     volumes:
       - ./whiskerboard/logs:/whiskerboard/logs
-      - ./images:/usr/src/python/whiskerboard/static/images
-      - ./templates:/usr/src/python/whiskerboard/templates
-      - ./css:/usr/src/python/whiskerboard/static/css
+      - ./images/:/usr/src/python/whiskerboard/board/static/images
+      - ./templates:/usr/src/python/whiskerboard/board/templates
+      - ./css:/usr/src/python/whiskerboard/board/static/css
+      - ./config:/usr/src/python/whiskerboard/config
   postgres:
     image: postgres:9.3
     volumes:
