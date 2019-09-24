@@ -5,19 +5,27 @@ services:
     volumes:
       - ./redis:/data
     command: redis-server --appendonly yes
+    restart: always
   postgres:
     image: postgres:9.3
     volumes:
       - ./pgdata/data:/data
       - ./pgdata/log:/var/log/postgresql
+    restart: always
   stashboard:
     image: agaveapi/whiskerboard
 #   command: ./manage.py runserver
+    restart: always
+    expose:
+    - "22"
+    - "8000"
+    - "8080"
     links:
     - postgres
     - redis
     ports:
     - "8000:8000"
+    - "8001:8080"
     - "10023:22"
     volumes:
       - ./whiskerboard/logs:/whiskerboard/logs
