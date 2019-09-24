@@ -48,6 +48,14 @@ curl -X POST \
 	"slug": "portal-web"
 }'
 
+curl -X POST \
+  http://localhost:8080/api/v1/statuses/ \
+  -H 'accept: */*' \
+  -H 'authorization: Basic YWRtaW46Y2hhbmdlaXQ=' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: b87591c7-c8fa-1e35-6f77-8ec0569efad3' \
+  -d '{"description": "bitbucket","image": "bitbucket","name": "Bit Bucket","resource_uri": "/api/v1/statuses/4/","severity": 10, "slug": "bitbucket"}'
 
 
 curl -X POST \
