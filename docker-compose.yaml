@@ -17,8 +17,7 @@ services:
     - postgres
     - redis
     ports:
-    - "8998:8080"
-    - "8999:8000"
+    - "8000:8000"
     - "10023:22"
     volumes:
       - ./whiskerboard/logs:/whiskerboard/logs
