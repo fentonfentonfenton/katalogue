@@ -17,21 +17,21 @@ services:
 #   command: ./manage.py runserver
     restart: always
     expose:
-    - "22"
-    - "8000"
-    - "8080"
-    links:
-    - postgres
-    - redis
+      - "22"
+      - "8000"
+      - "8080"
     ports:
-    - "8000:8000"
-    - "8001:8080"
-    - "10023:22"
+      - "8000:8000"
+      - "8001:8080"
+      - "10023:22"
+    depends_on:
+      - redis
+      - postgres
     volumes:
       - ./whiskerboard/logs:/whiskerboard/logs
-      - ./images:/usr/src/python/whiskerboard/static/images/
-      - ./templates:/usr/src/python/whiskerboard/templates
-      - ./css:/usr/src/python/whiskerboard/static/css
+#      - ./images:/usr/src/python/whiskerboard/static/images/
+#      - ./templates:/usr/src/python/whiskerboard/templates
+#      - ./css:/usr/src/python/whiskerboard/static/css
 
       ##
        #  ./manage.py collectstatic --noinput
