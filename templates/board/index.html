@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+      <div id="webservices" class="frame">
+        
+          <table id="service-list">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th class="today">BitBucket</th>
+                  <th class="date">Tests</th>
+                  <th class="date">Trivy</th>
+
+            </thead>
+
+            <tbody id="services-body">
+              {% for service in services %}
+                <tr>
+                  <td>
+                      
+                        {% for e in service.events.all %}
+                        {% if "bitbucket" in e.message %}
+                        <a href="{{ e.message }}">{{ service.name }}</a>
+                        {% endif %}
+                        {% endfor %}
+                  </td>
+                  
+                  <td class="status highlight">
+
+          {% with service.events.latest.status as latest_status %}
+                      
+                        <a href="{{ service.events.latest.message }}"><img src="{{ STATIC_URL }}images/status/bitbucket.png" alt="{{ latest_status }}"/></a>
+
+
+{% endwith %}
+		  
+                  </td>
+                  
+                  <td class="status">
+                    <img src="{{ STATIC_URL }}images/status/coverage.png" alt="{{ status.image }}">
+                  </td>
+                  <td class="status">
+                    <img src="{{ STATIC_URL }}images/status/vunerabilities.png" alt="{{ status.image }}">
+                  </td>
+                      
+                </tr>
+                
+              {% endfor %}
+              
+            </tbody>
+          </table>
+        
+        
+      </div>
+      
+{% endblock %}
+
