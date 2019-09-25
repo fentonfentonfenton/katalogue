@@ -33,8 +33,8 @@ services:
         go install ;
         kazaam -in /go/mocks/project.json -out /go/mocks/project_transformed.json -spec /go/mocks/project_transform.json ;
         kazaam -in /go/mocks/service.json -out /go/mocks/service_transformed.json -spec /go/mocks/service_transform.json ;
-        sh /go/mocks/curl.sh
-        "
+        sh /go/mocks/curl.sh ;
+        tail -F /dev/null"
     links:
       - whiskerboard
     volumes:

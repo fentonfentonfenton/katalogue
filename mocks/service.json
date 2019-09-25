@@ -2,9 +2,9 @@
 	"data": {
 		"service": {
 			"id": "1",
-			"slug": "cooldocker",
-			"name": "cooldocker",
-			"description": "Shared-dockerd-services",
+			"slug": "thingadocker",
+			"name": "thingadockerer",
+			"description": "supercool-dockerd-services",
 			"link": "http://git.link",
 			"services": [ {} ]
 		}
