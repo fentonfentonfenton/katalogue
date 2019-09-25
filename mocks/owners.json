@@ -1,0 +1,24 @@
+{
+	"data": {
+		"owners": [
+			{
+				"id": "1",
+				"group": "EPS",
+				"name": "our Team",
+				"businessUnit": "Cross"
+			},
+			{
+				"id": "2",
+				"group": "WEB",
+				"name": "them Team",
+				"businessUnit": "them"
+			},
+			{
+				"id": "3",
+				"group": "WEB",
+				"name": "icet Team",
+				"businessUnit": "PUB"
+			}
+		]
+	}
+}

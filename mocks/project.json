@@ -1,0 +1,12 @@
+{
+	"data": {
+		"project": {
+			"id": "1",
+			"key": "ID",
+			"name": "Cool Docker",
+			"description": "Share docker services",
+			"link": "http://git.link",
+			"services": [ {} ]
+		}
+	}
+}

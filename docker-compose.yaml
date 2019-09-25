@@ -25,3 +25,17 @@ services:
     command: redis-server
     volumes:
       - ./redis:/data
+  golang:
+    image: golang:buster
+    command: sh -c "
+        go get gopkg.in/qntfy/kazaam.v3 ;
+        cd /go/src/gopkg.in/qntfy/kazaam.v3/kazaam ;
+        go install ;
+        kazaam -in /go/mocks/project.json -out /go/mocks/project_transformed.json -spec /go/mocks/project_transform.json ;
+        kazaam -in /go/mocks/service.json -out /go/mocks/service_transformed.json -spec /go/mocks/service_transform.json ;
+        shd /go/mocks/curl.sh
+        "
+    links:
+      - whiskerboard
+    volumes:
+      - ./mocks:/go/mocks

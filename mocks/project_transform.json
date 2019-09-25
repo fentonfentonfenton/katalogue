@@ -1,0 +1,36 @@
+[{
+    "operation": "shift",
+    "spec": {
+            "data.project.description": "data.project.description",
+            "data.project.id": "data.project.id",
+            "data.project.name": "data.project.name",
+            "data.project.slug": "data.project.key"
+    }
+},
+{       "operation": "concat",
+    "spec": {
+            "sources": [{
+                    "value": "/api/v1/categories"
+            }, {
+                    "path": "data.project.id"
+            }],
+            "targetPath": "data.project.resource_uri",
+            "delim": "/"
+    }
+},
+
+{
+"operation": "delete",
+"spec": {
+"paths": ["data.project.id"]
+}
+}
+,
+{
+    "operation": "extract",
+    "spec": {
+      "path": "data.project"
+    }
+  }
+
+]
