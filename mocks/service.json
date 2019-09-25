@@ -1,9 +1,9 @@
 {
 	"data": {
-		"project": {
+		"service": {
 			"id": "1",
-			"key": "ID",
-			"name": "Cooldocker",
+			"slug": "cooldocker",
+			"name": "cooldocker",
 			"description": "Shared-dockerd-services",
 			"link": "http://git.link",
 			"services": [ {} ]

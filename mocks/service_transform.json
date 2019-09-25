@@ -1,0 +1,36 @@
+[{
+    "operation": "shift",
+    "spec": {
+            "data.service.description": "data.service.description",
+            "data.service.id": "data.service.id",
+            "data.service.name": "data.service.name",
+            "data.service.slug": "data.service.slug"
+    }
+},
+{       "operation": "concat",
+    "spec": {
+            "sources": [{
+                    "value": "/api/v1/categories"
+            }, {
+                    "path": "data.service.id"
+            }],
+            "targetPath": "data.service.resource_uri",
+            "delim": "/"
+    }
+},
+
+{
+"operation": "delete",
+"spec": {
+"paths": ["data.service.id"]
+}
+}
+,
+{
+    "operation": "extract",
+    "spec": {
+      "path": "data.service"
+    }
+  }
+
+]
