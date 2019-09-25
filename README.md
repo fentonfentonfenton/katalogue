@@ -1,8 +1,8 @@
 # katalogue
 
-`docker-compose up`
+`docker-compose up --force-recreate`
 
 visit `localhost:8080`
 
 
-run `sh api.sh` to populate
+edit `/mocks/http.go` and the golang docker-compose yaml `command:`s
