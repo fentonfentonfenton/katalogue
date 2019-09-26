@@ -10,14 +10,23 @@
 {       "operation": "concat",
     "spec": {
             "sources": [{
-                    "value": "/api/v1/categories"
-            }, {
-                    "path": "data.service.id"
-            }],
-            "targetPath": "data.service.category",
-            "delim": "/"
+                    "value": "/api/v1/categories/1"
+            } ],
+            "targetPath": "data.service.category"
     }
 },
+
+{       "operation": "concat",
+        "spec": {
+                "sources": [{
+                        "value": "/api/v1/services"
+                }, {
+                        "path": "data.service.id"
+                }],
+                "targetPath": "data.service.resource_uri",
+                "delim": "/"
+        }
+    },
 
 {
 "operation": "delete",

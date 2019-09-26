@@ -1,0 +1,12 @@
+{
+	"data": {
+		"service": {
+			"id": "2",
+			"slug": "webportal",
+			"name": "webportal",
+			"description": "supercool-web-portal",
+			"link": "http://git.link",
+			"services": [ {} ]
+		}
+	}
+}

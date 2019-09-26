@@ -1,0 +1,12 @@
+{
+	"data": {
+		"service": {
+			"id": "3",
+			"slug": "kafka-stairwell",
+			"name": "kafka-stairwell",
+			"description": "supercool-stairs-app",
+			"link": "http://git.link",
+			"services": [ {} ]
+		}
+	}
+}
